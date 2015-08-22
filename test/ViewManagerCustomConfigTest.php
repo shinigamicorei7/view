@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: BryanDaniel
  * Date: 22/08/2015
- * Time: 13:12
+ * Time: 14:35
  */
 
 namespace Matrix\View\Test;
@@ -11,36 +11,20 @@ namespace Matrix\View\Test;
 
 use Matrix\View\ViewManager;
 
-class ViewManagerTest extends \PHPUnit_Framework_TestCase
+class ViewManagerCustomConfigTest extends \PHPUnit_Framework_TestCase
 {
 
     protected $viewManager;
 
     /**
-     * ViewManagerTest constructor.
+     * ViewManagerCustomConfigTest constructor.
      */
     public function __construct()
     {
+        ViewManager::setDirConfig('pruebas/config.example.php');
         $this->viewManager = new ViewManager();
         $this->viewManager->loadTwigEnvironment();
         ViewManager::setInstance($this->viewManager);
-
-    }
-
-
-    public function test_instance_using_class_root()
-    {
-        $this->assertInstanceOf('Matrix\View\ViewManager', ViewManager::getInstance());
-    }
-
-    public function test_instance_using_class_alias()
-    {
-        $this->assertInstanceOf('Matrix\View\ViewManager', \View::getInstance());
-    }
-
-    public function test_class_alias_equals_class_root()
-    {
-        $this->assertEquals(ViewManager::getInstance(), \View::getInstance());
     }
 
     public function test_view_render_return_using_class_root()
@@ -53,9 +37,10 @@ class ViewManagerTest extends \PHPUnit_Framework_TestCase
 </head>
 <body>
 <h1>Welcome, Bryan</h1>
+    <p>Extendemos la template index.twig que se encuentra en el directorio root</p>
 </body>
 </html>';
-        $this->assertEquals($html, ViewManager::render('index.twig', array('name' => 'Bryan')));
+        $this->assertEquals($html, ViewManager::render('@test/index.twig', array('name' => 'Bryan')));
     }
 
     public function test_view_render_using_class_alias()
@@ -68,9 +53,10 @@ class ViewManagerTest extends \PHPUnit_Framework_TestCase
 </head>
 <body>
 <h1>Welcome, Bryan</h1>
+    <p>Extendemos la template index.twig que se encuentra en el directorio root</p>
 </body>
 </html>';
-        $this->assertEquals($html, \View::render('index.twig', array('name' => 'Bryan')));
+        $this->assertEquals($html, \View::render('@test/index.twig', array('name' => 'Bryan')));
     }
 
     public function test_view_render_using_helper_function()
@@ -83,10 +69,9 @@ class ViewManagerTest extends \PHPUnit_Framework_TestCase
 </head>
 <body>
 <h1>Welcome, Bryan</h1>
+    <p>Extendemos la template index.twig que se encuentra en el directorio root</p>
 </body>
 </html>';
-        $this->assertEquals($html, view('index.twig', array('name' => 'Bryan')));
+        $this->assertEquals($html, view('@test/index.twig', array('name' => 'Bryan')));
     }
-
-
 }
