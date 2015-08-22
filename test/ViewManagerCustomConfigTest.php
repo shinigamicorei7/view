@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: BryanDaniel
- * Date: 22/08/2015
- * Time: 14:35
- */
-
-namespace Matrix\View\Test;
-
+<?php namespace Matrix\View\Test;
 
 use Matrix\View\ViewManager;
 
@@ -27,7 +18,7 @@ class ViewManagerCustomConfigTest extends \PHPUnit_Framework_TestCase
         ViewManager::setInstance($this->viewManager);
     }
 
-    public function test_view_render_return_using_class_root()
+    public function testViewRenderReturnUsingClassRoot()
     {
         $html = '<!doctype html>
 <html lang="en">
@@ -43,7 +34,7 @@ class ViewManagerCustomConfigTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($html, ViewManager::render('@test/index.twig', array('name' => 'Bryan')));
     }
 
-    public function test_view_render_using_class_alias()
+    public function testViewRenderUsingClassAlias()
     {
         $html = '<!doctype html>
 <html lang="en">
@@ -59,7 +50,7 @@ class ViewManagerCustomConfigTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($html, \View::render('@test/index.twig', array('name' => 'Bryan')));
     }
 
-    public function test_view_render_using_helper_function()
+    public function testViewRenderUsingHelperFunction()
     {
         $html = '<!doctype html>
 <html lang="en">
