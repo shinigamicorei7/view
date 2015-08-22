@@ -12,7 +12,7 @@ class ViewManagerCustomConfigTest extends \PHPUnit_Framework_TestCase
      */
     public function __construct()
     {
-        ViewManager::setDirConfig('pruebas/config.example.php');
+        ViewManager::setDirConfig(LIB_DIR . '/test/pruebas/config.example.php');
         $this->viewManager = new ViewManager();
         $this->viewManager->loadTwigEnvironment();
         ViewManager::setInstance($this->viewManager);

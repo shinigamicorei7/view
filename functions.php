@@ -1,5 +1,15 @@
 <?php
 
+if (!function_exists('loadAlias')) {
+    /**
+     *
+     */
+    function loadAlias()
+    {
+        class_alias('Matrix\View\ViewManager', 'View');
+    }
+}
+
 if (!function_exists('view')) {
     /**
      * @param string $view_path
@@ -12,12 +22,3 @@ if (!function_exists('view')) {
     }
 }
 
-if (!function_exists('loadAlias')) {
-    /**
-     *
-     */
-    function loadAlias()
-    {
-        class_alias('Matrix\View\ViewManager', 'View');
-    }
-}
