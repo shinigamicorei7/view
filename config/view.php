@@ -7,7 +7,7 @@ return array(
      * templates_dir string|array
      */
     'templates_dir' => array(
-        LIB_DIR . '/views/'
+        LIB_DIR . '/templates/'
     ),
     /**
      * Namespaces que se usaran en la aplicación Ej:
@@ -18,9 +18,13 @@ return array(
      *
      * namespaces null|array
      */
-    'namespaces' => array(
-        'test' => LIB_DIR . '/pruebas/'
-    ),
+    'namespaces' => null,
+    /**
+     * Opciones diponibles
+     *
+     * @see \Twig_Environment
+     * options array
+     */
     'options' => array(
         'debug' => false,
         'cache' => LIB_DIR . '/cache/'
