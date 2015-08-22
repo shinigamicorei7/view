@@ -1,0 +1,5 @@
+vendor
+composer.lock
+ide-helper.php
+test.php
+.idea
