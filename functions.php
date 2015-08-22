@@ -1,14 +1,6 @@
 <?php
 
-if (!function_exists('loadAlias')) {
-    /**
-     *
-     */
-    function loadAlias()
-    {
-        class_alias('Matrix\View\ViewManager', 'View');
-    }
-}
+class_alias('Matrix\View\ViewManager', 'View');
 
 if (!function_exists('view')) {
     /**
@@ -21,4 +13,3 @@ if (!function_exists('view')) {
         return \View::render($view_path, $data);
     }
 }
-

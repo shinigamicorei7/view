@@ -44,7 +44,6 @@ class ViewManager
             self::setLoader($loaderInterface);
         }
 
-        loadAlias();
     }
 
     /**
