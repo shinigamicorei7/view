@@ -5,9 +5,9 @@ PHP_STANDARD ?= PSR2
 
 .PHONY: tests
 tests:
-	$(PHPCS) --standard=$(PHP_STANDARD) ./ test
+	$(PHPCS) --standard=$(PHP_STANDARD) --ignore=vendor ./ test
 	$(PHPUNIT) -v --bootstrap vendor/autoload.php test
 
 .PHONY: autofix
 autofix:
-	$(PHPCFB) --standard=$(PHP_STANDARD) ./ tests
+	$(PHPCFB) --standard=$(PHP_STANDARD) --ignore=vendor ./ tests
