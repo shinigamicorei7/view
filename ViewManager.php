@@ -43,6 +43,8 @@ class ViewManager
         if (!is_null($loaderInterface)) {
             self::setLoader($loaderInterface);
         }
+
+        loadAlias();
     }
 
     /**
