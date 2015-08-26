@@ -1,5 +1,7 @@
 ## ViewManager
 
+[![Join the chat at https://gitter.im/shinigamicorei7/view](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shinigamicorei7/view?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/shinigamicorei7/view.svg)](https://travis-ci.org/shinigamicorei7/view)
 [![Latest Stable Version](https://poser.pugx.org/shinigamicorei7/view/v/stable)](https://packagist.org/packages/shinigamicorei7/view) 
 [![Total Downloads](https://poser.pugx.org/shinigamicorei7/view/downloads)](https://packagist.org/packages/shinigamicorei7/view) 
