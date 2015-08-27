@@ -1,32 +1,34 @@
 {
-  "name": "shinigamicorei7/view",
-  "description": "Solución simple para poder usar twig (motor de plantillas para php) sin usar ningún tipo de framework o patrón de arquitectura de software.",
-  "minimum-stability": "dev",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Bryan Velastegui",
-      "email": "bryan_slvr@hotmail.com"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Matrix\\View\\": ""
-    },
-    "files": [
-      "functions.php"
-    ]
-  },
-  "require": {
-    "twig/twig": "~1.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "4.8.*",
-    "ext-xdebug": "*"
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0-dev"
-    }
-  }
+	"name": "shinigamicorei7/view",
+	"description": "Solución simple para poder usar twig (motor de plantillas para php) sin usar ningún tipo de framework o patrón de arquitectura de software.",
+	"minimum-stability": "stable",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Bryan Velastegui",
+			"email": "bryan_slvr@hotmail.com"
+		}
+	],
+	"autoload": {
+		"classmap": [
+			"src/"
+		],
+		"files": [
+			"src/helpers.php"
+		]
+	},
+	"require": {
+		"twig/twig": "~1.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.8.*",
+		"squizlabs/php_codesniffer": "2.*",
+		"phpdocumentor/phpdocumentor": "2.8.*",
+		"ext-xdebug": "*"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0-dev"
+		}
+	}
 }
