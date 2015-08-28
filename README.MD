@@ -12,7 +12,7 @@
 ```json
 {
     "require" : {
-        "shinigamicorei7/view" : "1.0.1"
+        "shinigamicorei7/view" : "dev-master"
     }
 }
 ```
@@ -64,7 +64,7 @@ require 'path/to/vendor/autoload.php';
 View::setDirConfig('path/to/view/config.php');
 
 /**
-* Usando el Alias de la Clase
+* Usando la sobrecarga de clases
 */
 echo View::render('index.twig',array('nombre' => 'Shinigamicorei7'));
 
@@ -75,17 +75,21 @@ echo View::render('index.twig',array('nombre' => 'Shinigamicorei7'));
 */
 
 /**
-* Usando los namespaces definidos en nuestro archivo de configuracion
+* Usando los namespaces definidos en nuestro archivo de configuración
 * echo view('@test/index.twig',array('nombre' => 'Shinigamicorei7')); 
 */
 ```
 
-ViewManager hereda todas las funciones de la clase Twig_Environment, así que tenemos todas las funciones brindadas por esta clase:
+ViewManager hereda todas las funciones de la clase `Twig_Environment`, así que tenemos todas las funciones brindadas por esta clase:
 
 ```php
+/**
+* is_a es una función del core de php, por esa razón la invocamos con una cadena de texto
+*/
 $is_a = new Twig_SimpleFunction('is_a', 'is_a');
 
 $filter = new Twig_SimpleFilter('array_filter', function ($context, $string) {
+    //tu código
 }, array('needs_context' => true));
 
 $test = new Twig_SimpleTest('red', function ($value) {
