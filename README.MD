@@ -108,3 +108,6 @@ View::addFilter($filter);
 
 View::addTest($test);
 ```
+## Licencia
+
+La dependencia View es software de tipo OpenSource, usando la licencia [MIT](http://opensource.org/licenses/MIT)
