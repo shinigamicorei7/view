@@ -1,9 +1,22 @@
 <?php
+/**
+ * Ejemplo de configuración.
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  Tests
+ * @author   Bryan Velastegui <bryan_slvr@hotmail.com>
+ * @license  http://github.com/shinigamicorei7/view/LICENCE MIT licence
+ * @link     http://github.com/shinigamicorei7/view
+ */
 
-if (!function_exists('view')) {
+if (false === function_exists('view')) {
     /**
-     * @param string $view_path
-     * @param array $data
+     * Compilar una vista compatible con twig
+     *
+     * @param string $view_path Ruta a la template.
+     * @param array  $data      Variables transmitidos a la template.
+     *
      * @return string
      */
     function view($view_path, $data = array())
